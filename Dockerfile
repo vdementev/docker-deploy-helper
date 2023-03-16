@@ -1,12 +1,15 @@
-FROM alpine:latest
+FROM php:8.1-cli-alpine
 
-RUN apk update && \
-  apk upgrade && \
-  apk add --no-cache \
+RUN apk update && apk add --no-cache \
+  brotli \
+  composer \
   curl \
-  openssh-client \
   lftp \
+  mysql-client \
+  nano \
+  openssh-client \
   rsync \
+  zip \
   && rm -rf /var/cache/apk/ \
   && rm -rf /root/.cache \
   && rm -rf /tmp/* \
